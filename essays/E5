@@ -1,0 +1,25 @@
+---
+layout: essay
+type: essay
+title: "E5: Reflecting on Assignment 2 Technical Essay"
+# All dates must be YYYY-MM-DD format!
+date: 2024-04-29
+published: true
+
+---
+
+Assignment 2 involves upgrading an e-commerce website to personalize user experiences, requiring user registration for purchasing, implementing login functionalities, ensuring security measures, and personalizing invoices.
+
+I learned that putting security is very hard and important. It is very difficult to connect everything and recognize which user is which and which password. Sounds very simple, yet, it's very complicated.
+
+Working on this all by myself was very tough. Luckily, we are a convenient generation, so we can ask ChatGPT whenever we get stuck with those errors, but still, we have to figure it out by ourselves since GPT might give you wrong things.
+
+I needed help with putting sticky forms and making invoices work after the registration page. It was very difficult because the login page and registration page have different kinds of processes when accessing the invoice.
+
+Comparing to assignment 1 and 2, people might say assignment 1 is harder, but for me, assignment 2 was even harder because of the security system. Assignment 1 is more like designing and making it from my own idea with joy, but assignment 2, we needed to connect everything together and manage it to make login and registration work.
+
+Honestly, it's 50% thinking about how to do something and 50% writing code. I spent so much time thinking about how to do something, but yet, I spent a very long time writing code because thinking and making actual action are completely different, and I see many troubles every time I write code. So if it's out of 100%, I spent both 50%, and together it's 100%.
+
+My IR2 and login page worked very well! I thought it would be harder, but it was enjoyable working with it. However, the registration page didn't work well. As I mentioned above, connecting registration and invoice page was very hard.
+
+If I could go back in time and do things differently, I would ask more questions to the professor so that I don't need to stress out too much about one error. I learned that a mistake can mess everything up, but I also think that a mistake can be the easiest way to learn things. Because when I make a mistake, I try my best to solve it so I actually memorize a lot how to do stuff.
