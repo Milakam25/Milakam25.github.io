@@ -1,15 +1,14 @@
 /* Pink-Silver Theme: modern, professional, cute-but-confident */
-
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rubik:wght@400;500;600;700&display=swap");
 
-/* Bootstrap + Techfolios variables */
 :root {
   /* Palette */
-  --tf-pink-strong: #d63384;   /* confident rose (links, accents) */
-  --tf-pink-soft:   #ffd1e1;   /* baby pink (soft accents) */
-  --tf-pink-bg:     #fff7fb;   /* subtle pink-tinted white */
+  --tf-pink-strong: #d63384;   /* confident rose */
+  --tf-pink-soft:   #ffd1e1;   /* baby pink */
+  --tf-pink-bg:     #fff7fb;   /* soft background tint */
   --tf-silver:      #c7c9d1;   /* clean silver */
-  --tf-ink:         #1f2937;   /* deep gray text */
+  --tf-ink:         #111827;   /* deeper modern text */
+  --tf-ink-soft:    #374151;   /* secondary text */
 
   /* Typography */
   --bs-font-sans-serif: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
@@ -19,11 +18,11 @@
   --bs-body-bg: var(--tf-pink-bg);
   --bs-body-color: var(--tf-ink);
 
-  /* Links + accents */
+  /* Links */
   --bs-link-color: var(--tf-pink-strong);
   --bs-link-hover-color: #b8256d;
 
-  /* Pills + icons (Techfolios uses these) */
+  /* Techfolios accents */
   --tf-pill-bg: var(--tf-pink-soft);
   --tf-icon-fill: var(--tf-pink-strong);
 
@@ -35,47 +34,94 @@
   --bs-border-radius: 1rem;
 }
 
-/* Headings: slightly punchier */
+/* Base layout polish */
+body {
+  font-family: var(--bs-font-sans-serif);
+  background: var(--tf-pink-bg);
+  color: var(--tf-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings: strong but clean */
 h1, h2, h3, h4, h5 {
   font-family: "Rubik", "Inter", sans-serif;
   color: var(--tf-ink);
   letter-spacing: -0.02em;
+  line-height: 1.15;
 }
 
-/* Add a clean “card” feel */
+/* Softer paragraph color for readability */
+p, li {
+  color: var(--tf-ink-soft);
+  line-height: 1.65;
+}
+
+/* Links: professional underline (no ugly default) */
+a {
+  text-decoration: none;
+  border-bottom: 1px solid rgba(214, 51, 132, 0.25);
+}
+a:hover {
+  border-bottom-color: rgba(214, 51, 132, 0.9);
+}
+
+/* Cards: reduce “messy” heavy shadow */
 .card, .tf-project, .tf-essay {
-  border: 1px solid rgba(199, 201, 209, 0.55);
-  box-shadow: 0 10px 30px rgba(17, 24, 39, 0.06);
+  border: 1px solid rgba(199, 201, 209, 0.45);
+  border-radius: 1rem;
+  box-shadow: 0 8px 22px rgba(17, 24, 39, 0.06);
+  background: #ffffff;
+}
+
+/* Card spacing inside (helps messy look a LOT) */
+.card-body, .tf-project .card-body, .tf-essay .card-body {
+  padding: 1.25rem;
 }
 
 /* Softer separators */
 hr {
-  border-top: 1px solid rgba(199, 201, 209, 0.45);
+  border: 0;
+  border-top: 1px solid rgba(199, 201, 209, 0.35);
 }
 
-/* Headshot: subtle silver ring + pink glow on hover */
+/* Headshot: subtle ring */
 .rounded-circle {
-  border: 2px solid rgba(199, 201, 209, 0.75);
+  border: 2px solid rgba(199, 201, 209, 0.7);
   padding: 4px;
+  background: #fff;
 }
 .rounded-circle:hover {
   border-color: var(--tf-pink-strong);
-  box-shadow: 0 0 0 6px rgba(255, 209, 225, 0.6);
+  box-shadow: 0 0 0 5px rgba(255, 209, 225, 0.55);
 }
 
-/* Nav: clean + confident */
-.navbar, .navbar-light, .navbar-dark {
+/* Navbar: simpler + consistent (blur can cause messy look) */
+.navbar {
   border-bottom: 1px solid rgba(199, 201, 209, 0.35);
-  background: rgba(255, 255, 255, 0.85) !important;
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.92) !important;
 }
 
-/* Buttons/CTA if your layout uses them */
+/* Buttons: confident pink */
 .btn-primary {
-  background-color: var(--tf-pink-strong);
-  border-color: var(--tf-pink-strong);
+  background-color: var(--tf-pink-strong) !important;
+  border-color: var(--tf-pink-strong) !important;
+  border-radius: 999px; /* modern pill button */
+  padding: 0.55rem 1rem;
+  font-weight: 600;
 }
 .btn-primary:hover {
-  background-color: #b8256d;
-  border-color: #b8256d;
+  background-color: #b8256d !important;
+  border-color: #b8256d !important;
 }
+
+/* Badges/pills: cleaner and less “chunky” */
+.badge, .pill, .tf-pill {
+  border-radius: 999px;
+}
+
+/* Make icons look sharp */
+svg, .fa, i {
+  color: var(--tf-pink-strong);
+}
+
