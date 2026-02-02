@@ -5,20 +5,18 @@
     "picture": "https://avatars.githubusercontent.com/u/156848163?s=400&u=cebc647802d90451d7908230a3d3089c38003041&v=4",
     "email": "mila425250@gmail.com",
     "phone": "808-365-2232",
-    "website": "https://mmaluhia.github.io",
     "summary": "Hi, my name is Mila Kam! Born in Oʻahu and raised in Tokyo, Japan, I bring a global perspective and strong bilingual skills to my academic and professional work.I am an undergraduate student at the University of Hawai‘i at Mānoa’s Shidler College of Business pursuing a B.B.A. in Management Information Systems. I expect to graduate in Spring 2026 and am actively preparing for roles in IT, data analytics, or software-related fields.",
-    "location": { "address": "", "postalCode": "96814", "city": "Honolulu", "countryCode": "USA", "region": "Hawaii" },
     "profiles": [
       { "network": "github", "username": "milakam25", "url": "http://github.com/milakam25" },
       { "network": "instagram", "username": "r.mkkm", "url": "http://instagram.com/r.mkkm" }
     ]
   },
   "interests": [
-    { "name": "J-drama & K-drama" },
-    { "name": "Dogs" },
+    { "name": "Traveling" },
+    { "name": "Learning new language" },
     { "name": "Driving aroud the island" },
     { "name": "Photography" },
-    { "name": "Cooking" }
+    { "name": "Learning about dog care & wellness" }
   ],
   "skills": [
     {
