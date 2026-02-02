@@ -1,0 +1,81 @@
+/* Pink-Silver Theme: modern, professional, cute-but-confident */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rubik:wght@400;500;600;700&display=swap");
+
+/* Bootstrap + Techfolios variables */
+:root {
+  /* Palette */
+  --tf-pink-strong: #d63384;   /* confident rose (links, accents) */
+  --tf-pink-soft:   #ffd1e1;   /* baby pink (soft accents) */
+  --tf-pink-bg:     #fff7fb;   /* subtle pink-tinted white */
+  --tf-silver:      #c7c9d1;   /* clean silver */
+  --tf-ink:         #1f2937;   /* deep gray text */
+
+  /* Typography */
+  --bs-font-sans-serif: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+  /* Page + text */
+  --tf-page-bg-color: var(--tf-pink-bg);
+  --bs-body-bg: var(--tf-pink-bg);
+  --bs-body-color: var(--tf-ink);
+
+  /* Links + accents */
+  --bs-link-color: var(--tf-pink-strong);
+  --bs-link-hover-color: #b8256d;
+
+  /* Pills + icons (Techfolios uses these) */
+  --tf-pill-bg: var(--tf-pink-soft);
+  --tf-icon-fill: var(--tf-pink-strong);
+
+  /* Section backgrounds */
+  --tf-footer-bg-color: #ffffff;
+  --tf-projects-bg-color: #ffffff;
+
+  /* Rounded / modern feel */
+  --bs-border-radius: 1rem;
+}
+
+/* Headings: slightly punchier */
+h1, h2, h3, h4, h5 {
+  font-family: "Rubik", "Inter", sans-serif;
+  color: var(--tf-ink);
+  letter-spacing: -0.02em;
+}
+
+/* Add a clean “card” feel */
+.card, .tf-project, .tf-essay {
+  border: 1px solid rgba(199, 201, 209, 0.55);
+  box-shadow: 0 10px 30px rgba(17, 24, 39, 0.06);
+}
+
+/* Softer separators */
+hr {
+  border-top: 1px solid rgba(199, 201, 209, 0.45);
+}
+
+/* Headshot: subtle silver ring + pink glow on hover */
+.rounded-circle {
+  border: 2px solid rgba(199, 201, 209, 0.75);
+  padding: 4px;
+}
+.rounded-circle:hover {
+  border-color: var(--tf-pink-strong);
+  box-shadow: 0 0 0 6px rgba(255, 209, 225, 0.6);
+}
+
+/* Nav: clean + confident */
+.navbar, .navbar-light, .navbar-dark {
+  border-bottom: 1px solid rgba(199, 201, 209, 0.35);
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(10px);
+}
+
+/* Buttons/CTA if your layout uses them */
+.btn-primary {
+  background-color: var(--tf-pink-strong);
+  border-color: var(--tf-pink-strong);
+}
+.btn-primary:hover {
+  background-color: #b8256d;
+  border-color: #b8256d;
+}
