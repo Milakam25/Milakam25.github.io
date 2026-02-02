@@ -4,13 +4,13 @@ title: Mila Kam | Professional Portfolio
 # Edit next line, replacing 'techfolios' with your github username
 url: "https://Milakam25.github.io"
 # Edit next line so that baseurl is "" if your repo is <username>.github.io
-baseurl: Milakam25.github.io
+baseurl: ""
 
 # OPTIONAL CHANGES
 ## Specify the theme using any of the css files in css/techfolio-theme
 techfolio-theme: pink-silver.css
 ## Specify the formatting for triple backquote code sections.
-rouge-theme: pink-silver.css
+rouge-theme: github
 
 # DON'T CHANGE THE FOLLOWING (unless you know what you're doing)
 markdown: kramdown
