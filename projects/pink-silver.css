@@ -125,3 +125,114 @@ svg, .fa, i {
   color: var(--tf-pink-strong);
 }
 
+/* =========================
+   Techfolios polish pack
+   (modern, clean, premium)
+   ========================= */
+
+/* 1) Better layout width + spacing */
+.container, .container-lg, .container-md, .container-sm {
+  max-width: 980px;
+}
+
+section {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+
+/* 2) Make headings consistent + less “template” */
+h1 { font-size: 2.15rem; margin-bottom: 0.35rem; }
+h2 { font-size: 1.35rem; margin-top: 1.75rem; }
+h3 { font-size: 1.15rem; margin-top: 1.25rem; }
+
+h2, h3 {
+  letter-spacing: -0.01em;
+}
+
+/* 3) Fix messy link underline everywhere */
+a, a:hover, a:focus {
+  border-bottom: none !important;
+}
+a {
+  text-decoration: none !important;
+}
+a:hover {
+  opacity: 0.92;
+}
+
+/* 4) Make nav links clean (no weird underline effects) */
+.navbar a, .navbar a:hover {
+  border-bottom: none !important;
+}
+
+/* 5) Cards: consistent spacing + less clutter inside lists */
+.card {
+  overflow: hidden;
+}
+.card-title {
+  margin-bottom: 0.35rem;
+}
+.card-text {
+  margin-bottom: 0.75rem;
+}
+.card ul {
+  padding-left: 1.1rem;
+  margin-bottom: 0;
+}
+
+/* 6) Resume page: stop “messy stacked” look */
+#resume {
+  max-width: 900px;
+  margin: 0 auto;
+}
+#resume h1 {
+  font-size: 2.1rem;
+}
+#resume h2 {
+  border-top: 1px solid rgba(199, 201, 209, 0.35);
+  padding-top: 0.75rem;
+  margin-top: 1.75rem;
+}
+#resume .lead, #resume p {
+  max-width: 75ch;
+}
+
+/* 7) Tighten big empty space between sections (common Techfolios issue) */
+#projects, #essays {
+  padding-top: 1.25rem;
+}
+
+/* 8) Pills/badges: “cute but professional” */
+.badge, .tf-pill, .pill {
+  background: rgba(255, 209, 225, 0.65) !important;
+  color: var(--tf-ink) !important;
+  border: 1px solid rgba(214, 51, 132, 0.18);
+  font-weight: 600;
+}
+
+/* 9) Buttons: add subtle shadow so it looks intentional */
+.btn-primary {
+  box-shadow: 0 10px 22px rgba(214, 51, 132, 0.18);
+}
+.btn-primary:focus {
+  box-shadow: 0 0 0 0.2rem rgba(214, 51, 132, 0.2) !important;
+}
+
+/* 10) Make horizontal rules + section separators look clean */
+hr {
+  margin: 1.5rem 0;
+}
+
+/* 11) Make images responsive and tidy */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 12) Optional: subtle page background texture feeling (very light) */
+body {
+  background:
+    radial-gradient(900px 450px at 20% 5%, rgba(255, 209, 225, 0.35), transparent 60%),
+    radial-gradient(900px 450px at 80% 0%, rgba(199, 201, 209, 0.18), transparent 55%),
+    var(--tf-pink-bg);
+}
