@@ -1,16 +1,26 @@
 ---
-name: Problem Report
-about: For communicating problems creating your professional portfolio
-title: ''
-labels: ''
-assignees: ''
-
+name: Bug report
+about: Report a problem with the portfolio website
+title: "[Bug]: "
+labels: bug
+assignees: Milakam25
 ---
 
-(Please replace this comment with your problem report.  Tell us what went wrong. 
+## What happened?
 
-If it involves console output, then please cut and paste the output into this field---don't take a snapshot and paste the image. 
+Describe the problem and what you expected to happen.
 
-On the other hand, if the problem is with the visual layout of your portfolio, then please do make a snapshot.  
+## How can it be reproduced?
 
-Finally, don't forget to include the URL to your repository so we can take a look at it!)
+1. Go to …
+2. Select …
+3. Observe …
+
+## Environment
+
+- Device:
+- Browser and version:
+
+## Additional context
+
+Add screenshots, links, or console output if they help explain the issue.
