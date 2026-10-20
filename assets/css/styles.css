@@ -875,8 +875,8 @@
     .sk-card:hover { border-color: var(--green); }
     .ex-card { transition: background-color .25s ease, border-color .25s ease; }
     .ex-card:hover, .ex-card:focus, .ex-card:active {
-      background: #f0faf5;
-      border-color: #80bea7;
+      background: #fbe1ec;
+      border-color: #d75f8a;
     }
     .ex-card:focus-visible { outline: 2px solid var(--pink); outline-offset: 4px; }
     .tag { background: #fce9f0; border-color: #edbfd0; color: #9d3f62; }
