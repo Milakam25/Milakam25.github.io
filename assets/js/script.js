@@ -8,17 +8,10 @@ const obs = new IntersectionObserver((entries) => {
 rv.forEach((el) => obs.observe(el));
 
 if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  const wavePhotos = document.querySelectorAll('.hero-photo-bg, .about-img-bg, .place-photo, .pbg, .exp-bg');
   const placeCrossfade = document.querySelector('.place-crossfade');
   let waveFrame = 0;
   const updateWave = () => {
     const height = window.innerHeight;
-    wavePhotos.forEach((photo) => {
-      const rect = photo.parentElement.getBoundingClientRect();
-      if (rect.bottom < 0 || rect.top > height) return;
-      const progress = (height - rect.top) / (height + rect.height);
-      photo.style.setProperty('--wave-shift', `${Math.sin(progress * Math.PI * 2) * 24}px`);
-    });
     if (placeCrossfade) {
       const rect = placeCrossfade.getBoundingClientRect();
       const raw = (height * 0.72 - rect.top) / Math.max(1, rect.height * 0.82);

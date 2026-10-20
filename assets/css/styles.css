@@ -525,6 +525,9 @@
       object-fit: cover;
       transition: transform .4s ease;
     }
+    .work-album figure { animation: eduPhotoFloat 6.2s ease-in-out infinite; }
+    .work-album figure:nth-child(2) { animation-delay: .7s; }
+    .work-album figure:nth-child(3) { animation-delay: 1.2s; }
     @media (hover: hover) and (prefers-reduced-motion: no-preference) {
       .work-album figure:hover img { transform: scale(1.035); }
     }
@@ -794,7 +797,7 @@
     .f-lnks a:hover { color:var(--pink); }
 
     /* ── REVEAL ANIMATIONS ── */
-    .rv { opacity:0; transform:translateY(28px); transition:opacity .7s ease, transform .7s ease; }
+    .rv { opacity:0; transform:translateY(28px); transition:opacity 1s ease, transform 1s ease; }
     .rv.on { opacity:1; transform:translateY(0); }
     .d1 { transition-delay:.1s; }
     .d2 { transition-delay:.22s; }
@@ -1507,7 +1510,7 @@
       }
     }
     .rv.on {
-      animation: softPop .65s cubic-bezier(.19,.8,.28,1) both;
+      animation: softPop 1s cubic-bezier(.19,.8,.28,1) both;
     }
     @keyframes softPop {
       0% {
