@@ -336,6 +336,17 @@
 
     </div>
   </div>
+  <div class="work-album rv" aria-label="Work experience photo album">
+    <figure>
+      <img src="assets/images/work-photo-1.jpg" alt="Japan Airlines aircraft inside a maintenance hangar" loading="lazy" width="1800" height="1350"/>
+    </figure>
+    <figure>
+      <img src="assets/images/work-photo-2.jpg" alt="Panel discussion at a Japan Airlines event" loading="lazy" width="1800" height="1350"/>
+    </figure>
+    <figure>
+      <img src="assets/images/work-photo-3.jpg" alt="Group photo with colleagues" loading="lazy" width="1800" height="1350"/>
+    </figure>
+  </div>
 </section>
 
 
@@ -345,13 +356,13 @@
   <h2 class="stitle rv d1">Education</h2>
   <div class="edu-photo-strip rv d2" aria-label="Education photo album">
     <figure class="edu-photo edu-photo-wide">
-      <img src="assets/education-photo-1.jpg" alt="Education memory photo 1"/>
+      <img src="assets/education-photo-1.jpg" alt="Group presentation on pricing disparity across countries" loading="lazy"/>
     </figure>
     <figure class="edu-photo edu-photo-small">
-      <img src="assets/education-photo-2.jpg" alt="Education memory photo 2"/>
+      <img src="assets/education-photo-2.jpg" alt="Mila in graduation attire beside the ocean" loading="lazy" style="object-position: center 42%;"/>
     </figure>
     <figure class="edu-photo edu-photo-tilt">
-      <img src="assets/education-photo-3.jpg" alt="Education memory photo 3"/>
+      <img src="assets/education-photo-3.jpg" alt="Class group photo at Keio University" loading="lazy"/>
     </figure>
   </div>
   <div class="edu-grid">
@@ -372,7 +383,7 @@
 
 <!-- ═══ CERTS & EXTRAS ═══ -->
 <section class="photo-section short" id="extras">
-  <div class="pbg" style="background-image:url('assets/images/honolulu-coast.jpg');"></div>
+  <div class="pbg" style="background-image:url('assets/images/certifications-background.jpg');"></div>
   <div class="pov"></div>
   <div class="pcnt">
     <div class="mlbl rv">Achievements</div>
@@ -404,8 +415,10 @@
       <div class="mlbl rv">Get in Touch</div>
       <h2 class="stitle rv d1">Let's <span>Connect</span></h2>
       <p class="c-intro rv d2">
-        I am actively looking for entry-level opportunities in cybersecurity, systems analysis,
-        data, and IT. Whether you have an opportunity or want to connect, my inbox is always open.
+        I am currently seeking full-time opportunities in cybersecurity, artificial intelligence,
+        machine learning, software engineering, and related technology fields. I am open to
+        professional connections and career opportunities. Please feel free to reach out to
+        discuss potential opportunities or collaborations.
       </p>
       <div class="c-links rv d3">
         <a href="mailto:mila425250@gmail.com" class="c-link">
@@ -430,12 +443,14 @@
         </a>
       </div>
     </div>
-    <form class="c-form rv d2" id="contact-form">
-      <div class="fg"><label class="flbl" for="contact-name">Name</label><input class="finp" id="contact-name" name="name" type="text" autocomplete="name" placeholder="Your name" required/></div>
-      <div class="fg"><label class="flbl" for="contact-email">Email</label><input class="finp" id="contact-email" name="email" type="email" autocomplete="email" placeholder="your@email.com" required/></div>
-      <div class="fg"><label class="flbl" for="contact-message">Message</label><textarea class="finp" id="contact-message" name="message" placeholder="Tell me about the opportunity..." required></textarea></div>
+    <form class="c-form rv d2" id="contact-form" method="post" aria-describedby="contact-status">
+      <div class="fg"><label class="flbl" for="contact-name">Name</label><input class="finp" id="contact-name" name="name" type="text" autocomplete="name" placeholder="Enter your name" maxlength="200" required/></div>
+      <div class="fg"><label class="flbl" for="contact-email">Email</label><input class="finp" id="contact-email" name="email" type="email" autocomplete="email" placeholder="Enter your email address" maxlength="254" required/></div>
+      <div class="fg"><label class="flbl" for="contact-message">Message</label><textarea class="finp" id="contact-message" name="message" placeholder="Write your message here..." maxlength="10000" required></textarea></div>
+      <input type="text" name="_gotcha" class="contact-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true"/>
       <button class="fsbmt" type="submit">Send Message</button>
-      <p class="form-note">Submitting opens your email app so you can review the message before sending.</p>
+      <p id="contact-status" class="contact-status" role="status" aria-live="polite" aria-atomic="true"></p>
+      <noscript><p>Please enable JavaScript to send a message through this form.</p></noscript>
     </form>
   </div>
 </section>
@@ -449,6 +464,8 @@
     <a href="mailto:mila425250@gmail.com">Email</a>
   </div>
 </footer>
+  <script src="assets/js/contact-config.js"></script>
+  <script src="assets/js/contact.js"></script>
   <script src="assets/js/script.js"></script>
 </body>
 </html>
