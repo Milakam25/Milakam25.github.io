@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mila Kam | IT Portfolio</title>
+  <title>Mila's Portfolio</title>
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <a href="#top" class="nav-logo">Mila<span>.</span>Kam</a>
+  <a href="#top" class="nav-logo">Mila's Portfolio</a>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
+    <li><a href="#top">Home</a></li>
+    <li><a href="#why-tech">About Me</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
@@ -25,35 +26,17 @@
 <!-- ═══ HERO ═══ -->
 <section class="hero" id="top">
   <div class="hero-left">
-    <div class="hero-profile">
-      <label class="profile-upload" for="profile-photo" title="Choose a profile photo">
-        <img id="profile-preview" src="assets/site-photo-placeholder.jpg" alt="Profile photo"/>
-        <span class="profile-upload-icon" aria-hidden="true">+</span>
-      </label>
-      <input id="profile-photo" class="profile-input" type="file" accept="image/*" aria-label="Upload a profile photo"/>
-      <span id="profile-feedback" class="profile-feedback" role="status">Add your photo</span>
-    </div>
-    <div class="hero-eyebrow">MIS Graduate &nbsp;·&nbsp; Honolulu, HI &nbsp;·&nbsp; Open to opportunities</div>
-    <h1 class="hero-h1">Mila <em>Kam</em></h1>
-    <p class="hero-role">MIS Graduate | Systems &amp; Cybersecurity | Bilingual EN/JP</p>
-    <p class="hero-bio">
-      I combine <strong>information systems, software development, and bilingual communication</strong>
-      to solve practical business and technology problems. I am interested in systems,
-      cybersecurity, data, and IT roles where thoughtful technology makes a real impact.
-    </p>
-    <div class="hero-btns">
-      <a href="#projects" class="btn-solid">See My Projects</a>
-      <a href="assets/resume.pdf" download class="btn-line">Download Resume</a>
-    </div>
-    <div class="hero-stats">
-      <div>
-      
-      </div>
-    </div>
+    <h1 class="hero-h1 hero-name-animated" aria-label="Mila Kam">
+      <span>Mila</span>
+      <em>Kam</em>
+    </h1>
   </div>
 
   <div class="hero-right">
     <div class="hero-photo-bg"></div>
+    <div class="hero-portrait-card">
+      <img class="hero-portrait" src="assets/mila-kam-portrait.jpg" alt="Mila Kam" width="1034" height="1379"/>
+    </div>
   </div>
 
   <div class="scroll-cue">
@@ -61,39 +44,53 @@
   </div>
 </section>
 
-<div class="shoreline-divider" aria-hidden="true"></div>
 
-<!-- ═══ ABOUT / INTRO ═══ -->
-<section class="about-strip" id="about">
-  <div class="about-img-col">
-    <div class="about-img-bg"></div>
-    <div class="about-counter"></div>
+<!-- ═══ ABOUT ME / WHY TECHNOLOGY ═══ -->
+<section class="about-strip combined-about" id="why-tech" aria-labelledby="about-heading">
+  <div class="about-img-col place-crossfade" aria-label="Hawaii and Japan background transition">
+    <div class="place-photo place-photo-hawaii" aria-hidden="true"></div>
+    <div class="place-photo place-photo-japan" aria-hidden="true"></div>
+    <div class="album-board" aria-label="Photo album placeholders">
+      <div class="album-card album-card-main">
+        <span>Hawaiʻi</span>
+      </div>
+      <div class="album-card album-card-secondary">
+        <span>Tokyo</span>
+      </div>
+    </div>
+    <div class="place-progress" aria-hidden="true"><span></span></div>
   </div>
   <div class="about-text-col">
-    <div class="chip rv"><span class="chip-dot"></span>About Me</div>
-    <h2 class="about-h2 rv d1">The person behind<br/>the <span>code.</span></h2>
+    <h2 class="combined-about-label rv" id="about-heading">About Me</h2>
+    <p class="combined-about-lead rv d1"><strong>A bilingual MIS graduate shaped by Hawaiʻi, Tokyo, business, and technology.</strong></p>
+    <p class="about-p rv d1">Hi, I'm Mila Kam!</p>
     <p class="about-p rv d2">
-      I'm a Management Information Systems graduate from the Shidler College of Business
-      with experience across <strong>enterprise IT, technical documentation, data operations,
-      and full-stack development</strong>.
+      I'm a recent graduate of the University of Hawaiʻi at Mānoa with a Bachelor of Business
+      Administration in Management Information Systems (MIS). Born on Oʻahu, Hawaiʻi, and raised
+      in Tokyo, Japan, my multicultural background has shaped my adaptability, communication
+      skills, and ability to approach challenges from different perspectives.
     </p>
     <p class="about-p rv d3">
-      Native in Japanese and fluent in English, I have supported cross-cultural teams through
-      translation and interpretation. I am looking for an early-career role in cybersecurity,
-      systems analysis, data, or IT where I can pair technical problem-solving with clear communication.
+      My passion for technology comes from the opportunity to turn ideas into practical
+      solutions. I'm particularly interested in <strong>artificial intelligence, cybersecurity,
+      software development, and data analytics</strong>, and I enjoy exploring how technology
+      can solve real-world problems and improve the way businesses operate.
     </p>
-    <div class="trait-list rv d3">
-      <span class="trait">Problem Solver</span>
-      <span class="trait">Team Player</span>
-      <span class="trait">Security Minded</span>
-      <span class="trait">Detail Oriented</span>
-      <span class="trait">Fast Learner</span>
-      <span class="trait">Self-Starter</span>
-    </div>
+    <p class="about-p rv d3">
+      Through internships, academic experiences, and personal projects, I've gained hands-on
+      experience in programming, data analysis, and problem-solving. What I enjoy most is the
+      process of bringing an idea to life, from researching and learning new technologies to
+      building, troubleshooting, and improving a solution.
+    </p>
+    <p class="about-p rv d3">
+      I'm currently seeking full-time opportunities in the technology industry where I can
+      contribute my technical and business knowledge, collaborate with others, and continue
+      growing as a professional.
+    </p>
+    <p class="combined-about-strengths rv d3"><strong>Bilingual Communication · Adaptability · Problem-Solving · AI &amp; Cybersecurity · Data Analytics</strong></p>
   </div>
 </section>
 
-<div class="shoreline-divider" aria-hidden="true"></div>
 
 <!-- ═══ SKILLS ═══ -->
 <section class="photo-section" id="skills">
@@ -112,55 +109,63 @@
         </div>
       </div>
       <div class="sk-card">
-        <div class="sk-lbl">Web Dev</div>
+        <div class="sk-lbl">Full-Stack Development</div>
         <div class="tags">
           <span class="tag">React</span><span class="tag">Next.js</span>
-          <span class="tag">Tailwind CSS</span><span class="tag">React Hook Form</span><span class="tag">Zod</span>
+          <span class="tag">FastAPI</span><span class="tag">REST APIs</span><span class="tag">Tailwind CSS</span>
         </div>
       </div>
       <div class="sk-card">
-        <div class="sk-lbl">Databases</div>
+        <div class="sk-lbl">Databases &amp; Data</div>
         <div class="tags">
           <span class="tag">PostgreSQL</span><span class="tag">Supabase</span>
-          <span class="tag">Database Design</span><span class="tag">Data Systems</span>
+          <span class="tag">Relational Database Design</span><span class="tag">Row-Level Security</span>
         </div>
       </div>
       <div class="sk-card">
         <div class="sk-lbl">Cybersecurity</div>
         <div class="tags">
-          <span class="tag">Networking</span><span class="tag">Security Fundamentals</span>
           <span class="tag">Threat Detection</span><span class="tag">Risk Assessment</span>
+          <span class="tag">Role-Based Access Control</span><span class="tag">API Security</span><span class="tag">Threat Modeling / STRIDE</span>
         </div>
       </div>
       <div class="sk-card">
-        <div class="sk-lbl">Tools</div>
+        <div class="sk-lbl">Testing &amp; Deployment</div>
         <div class="tags">
-          <span class="tag n">Git / GitHub</span><span class="tag n">VS Code</span>
-          <span class="tag n">npm</span><span class="tag n">Vitest</span>
-          <span class="tag n">React Testing Library</span><span class="tag n">Playwright</span>
+          <span class="tag n">Docker</span><span class="tag n">GitHub Actions / CI/CD</span>
+          <span class="tag n">Playwright</span><span class="tag n">pytest / Vitest</span><span class="tag n">Vercel</span>
+          <span class="tag n">VS Code</span><span class="tag n">npm</span>
         </div>
       </div>
       <div class="sk-card">
-        <div class="sk-lbl">Soft Skills</div>
+        <div class="sk-lbl">AI &amp; Machine Learning</div>
         <div class="tags">
-          <span class="tag n">Agile / Scrum</span><span class="tag n">Technical Documentation</span>
-          <span class="tag n">Figma</span><span class="tag n">Japanese / English</span>
+          <span class="tag">OpenAI API</span><span class="tag">scikit-learn</span>
+          <span class="tag">Anomaly Detection</span><span class="tag">Model Evaluation</span><span class="tag">Vision-Based Analysis</span>
+        </div>
+      </div>
+      <div class="sk-card">
+        <div class="sk-lbl">AI Tools</div>
+        <div class="tags">
+          <span class="tag">ChatGPT</span>
+          <span class="tag">Codex</span>
+          <span class="tag">Claude</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="shoreline-divider" aria-hidden="true"></div>
 
 <!-- ═══ PROJECTS ═══ -->
 <section class="proj-wrap" id="projects">
   <div class="mlbl rv">Work</div>
-  <h2 class="stitle rv d1">Featured <span>Projects</span></h2>
+  <h2 class="stitle rv d1">Projects</h2>
 
   <div class="proj-legend rv d2">
     <div class="legend-item"><div class="legend-dot" style="background:#FFD93D;box-shadow:0 0 8px #FFD93D;"></div>Full-Stack Development</div>
     <div class="legend-item"><div class="legend-dot" style="background:#4FC3F7;box-shadow:0 0 8px #4FC3F7;"></div>Cybersecurity</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#32846c;"></div>Data Analytics</div>
   </div>
 
   <div class="proj-grid">
@@ -175,12 +180,12 @@
         <div class="crystal-sparkle" style="width:4px;height:4px;top:32%;left:60%;animation-delay:.7s;"></div>
         <div class="crystal-sparkle" style="width:5px;height:5px;top:55%;left:40%;animation-delay:1.4s;"></div>
         <div class="crystal-content">
-          <div class="crystal-emotion">Full-Stack Development</div>
-          <span class="crystal-badge">Web App</span>
-          <h3 class="crystal-title">AI-Powered Pet Health Management App</h3>
-          <p class="crystal-desc">Developed a full-stack app for medical records, medications, symptoms, nutrition, and appointments, with AI-powered insights, summaries, reminders, and food-label scanning.</p>
+          <div class="crystal-emotion">Cybersecurity</div>
+          <span class="crystal-badge">In Progress</span>
+          <h3 class="crystal-title">Malu | Cybersecurity Platform</h3>
+          <p class="crystal-desc">Developed a full-stack cybersecurity platform featuring threat detection, risk assessment, security monitoring, and incident management.</p>
           <div class="crystal-tags">
-            <span class="ctag">React</span><span class="ctag">TypeScript</span><span class="ctag">Supabase</span>
+            <span class="ctag">Python</span><span class="ctag">FastAPI</span><span class="ctag">React</span><span class="ctag">TypeScript</span><span class="ctag">PostgreSQL</span><span class="ctag">Docker</span>
           </div>
           <a href="https://github.com/Milakam25" target="_blank" rel="noopener noreferrer" class="crystal-link">View GitHub --></a>
         </div>
@@ -195,22 +200,41 @@
         <div class="crystal-sparkle" style="width:5px;height:5px;top:22%;left:30%;animation-delay:.3s;"></div>
         <div class="crystal-sparkle" style="width:4px;height:4px;top:45%;left:70%;animation-delay:1.1s;"></div>
         <div class="crystal-content">
-          <div class="crystal-emotion">Cybersecurity</div>
-          <span class="crystal-badge">Security Application</span>
-          <h3 class="crystal-title">Cybersecurity Project</h3>
-          <p class="crystal-desc">Developed a security application to identify and analyze potential threats, with threat detection, risk assessment, and automated reporting for security monitoring.</p>
+          <div class="crystal-emotion">Full-Stack Development</div>
+          <span class="crystal-badge">Web App</span>
+          <h3 class="crystal-title">Mochi | AI-Powered Pet Health Application</h3>
+          <p class="crystal-desc">Developed a full-stack pet health application featuring AI-assisted food label analysis, health tracking, medical records, and personalized care management.</p>
           <div class="crystal-tags">
-            <span class="ctag">Threat Detection</span><span class="ctag">Risk Assessment</span><span class="ctag">Reporting</span>
+            <span class="ctag">Next.js</span><span class="ctag">React</span><span class="ctag">TypeScript</span><span class="ctag">Tailwind CSS</span><span class="ctag">Supabase</span>
           </div>
-          <a href="https://github.com/Milakam25" target="_blank" rel="noopener noreferrer" class="crystal-link">View GitHub --></a>
+          <a href="https://mochi-milakam25.vercel.app/" target="_blank" rel="noopener noreferrer" class="crystal-link">Live Website: mochi-milakam25.vercel.app</a>
         </div>
       </div>
     </div>
 
+    <article class="pc veterinary-project rv">
+      <div class="crystal-card cry-disgust">
+        <div class="crystal-content">
+          <div class="crystal-emotion">Data Analytics</div>
+          <span class="crystal-badge">Data Cleaning &amp; Dashboard</span>
+          <h3 class="crystal-title">Veterinary Clinical Data Analysis</h3>
+          <p class="crystal-desc">Cleaned and organized 10,000 veterinary encounter records from a Kaggle dataset, then built an Excel dashboard to explore species, breeds, medical histories, and symptom patterns.</p>
+          <p class="crystal-desc"><strong>My contribution:</strong> Standardized animal names, breed and medical history casing, corrected symptom spelling, and removed duplicate symptoms within each encounter. Created encounter IDs, symptom counts, analysis tables, a data dictionary, and four dashboard charts while preserving the raw source data.</p>
+          <div class="crystal-tags">
+            <span class="ctag">Excel</span><span class="ctag">Data Cleaning</span><span class="ctag">Data Visualization</span><span class="ctag">Dashboard Design</span>
+          </div>
+          <div class="veterinary-downloads">
+            <a href="assets/veterinary-clinical-cleaned-dashboard.xlsx" download class="crystal-link">Download My Cleaned Data &amp; Dashboard</a>
+            <a href="assets/veterinary-clinical-kaggle-source.xlsx" download class="crystal-link">Download Original Kaggle Data</a>
+          </div>
+          <p class="veterinary-source">Source: Kaggle dataset supplied as an Excel workbook. Data cleaning and dashboard by Mila Kam.</p>
+        </div>
+      </div>
+    </article>
+
   </div>
 </section>
 
-<div class="shoreline-divider" aria-hidden="true"></div>
 
 <!-- ═══ EXPERIENCE — drag / scroll cards ═══ -->
 <section class="exp-section" id="experience">
@@ -233,13 +257,12 @@
   <div class="exp-scroll-outer" id="expScroll">
     <div class="exp-track">
 
-      <!-- card 1 -->
       <div class="exp-card">
         <div class="exp-card-top">
           <span class="exp-badge">Internship</span>
           <span class="exp-year">2025</span>
         </div>
-        <div class="exp-role">Enterprise Technology Intern</div>
+        <div class="exp-role">Information Technology Intern</div>
         <div class="exp-company">State of Hawaii - Office of Enterprise Technology Services</div>
         <div class="exp-date">October 2025 - December 2025</div>
         <ul class="exp-bullets">
@@ -248,15 +271,26 @@
         </ul>
       </div>
 
-      
+      <div class="exp-card">
+        <div class="exp-card-top">
+          <span class="exp-badge">Part-time</span>
+          <span class="exp-year">2025-26</span>
+        </div>
+        <div class="exp-role">Data &amp; Systems Engineering Assistant</div>
+        <div class="exp-company">Iwasaki Co., Ltd.</div>
+        <div class="exp-date">December 2025 - April 2026</div>
+        <ul class="exp-bullets">
+          <li>Supported data analysis, document management, and technical operations across business workflows</li>
+          <li>Organized digital records and datasets to improve accuracy and efficiency</li>
+        </ul>
+      </div>
 
-      <!-- card 2 -->
       <div class="exp-card">
         <div class="exp-card-top">
           <span class="exp-badge">Internship</span>
           <span class="exp-year">2025</span>
         </div>
-        <div class="exp-role">Technical Documentation &amp; Market Research Intern</div>
+        <div class="exp-role">Business Development Intern</div>
         <div class="exp-company">Interstel Technologies Inc.</div>
         <div class="exp-date">September 2025 - October 2025</div>
         <ul class="exp-bullets">
@@ -265,8 +299,6 @@
         </ul>
       </div>
 
-    
-      <!-- card 3 -->
       <div class="exp-card">
         <div class="exp-card-top">
           <span class="exp-badge">Internship</span>
@@ -281,18 +313,17 @@
         </ul>
       </div>
 
-      <!-- card 4 -->
       <div class="exp-card">
         <div class="exp-card-top">
-          <span class="exp-badge">Part-time</span>
-          <span class="exp-year">2025-26</span>
+          <span class="exp-badge">Full-time</span>
+          <span class="exp-year">2025</span>
         </div>
-        <div class="exp-role">Data &amp; Technical Operations</div>
-        <div class="exp-company">Iwasaki Co., Ltd.</div>
-        <div class="exp-date">December 2025 - April 2026</div>
+        <div class="exp-role">Social Media Manager – Cafe Hoppers Club</div>
+        <div class="exp-company">University of Hawaii at Manoa</div>
+        <div class="exp-date">October 2025 - December 2025</div>
         <ul class="exp-bullets">
-          <li>Supported data analysis, document management, and technical operations across business workflows</li>
-          <li>Organized digital records and datasets to improve accuracy and efficiency</li>
+          <li>Designed promotional posters and flyers for club events and activities</li>
+          <li>Managed social media content creation and posting to promote events</li>
         </ul>
       </div>
 
@@ -300,12 +331,22 @@
   </div>
 </section>
 
-<div class="shoreline-divider" aria-hidden="true"></div>
 
 <!-- ═══ EDUCATION ═══ -->
 <section class="edu-wrap" id="education">
   <div class="mlbl rv">Academic</div>
   <h2 class="stitle rv d1">Education</h2>
+  <div class="edu-photo-strip rv d2" aria-label="Education photo album">
+    <figure class="edu-photo edu-photo-wide">
+      <img src="assets/education-photo-1.jpg" alt="Education memory photo 1"/>
+    </figure>
+    <figure class="edu-photo edu-photo-small">
+      <img src="assets/education-photo-2.jpg" alt="Education memory photo 2"/>
+    </figure>
+    <figure class="edu-photo edu-photo-tilt">
+      <img src="assets/education-photo-3.jpg" alt="Education memory photo 3"/>
+    </figure>
+  </div>
   <div class="edu-grid">
     <div class="edu-card rv d1">
       <div class="edu-yr">Expected May 2026</div>
@@ -337,14 +378,6 @@
         </ul>
       </div>
       <div class="ex-card">
-        <div class="ex-lbl">MIS Focus</div>
-        <ul class="ex-list">
-          <li>Systems analysis and design</li>
-          <li>Networking and security</li>
-          <li>Computer and data systems</li>
-        </ul>
-      </div>
-      <div class="ex-card">
         <div class="ex-lbl">Languages</div>
         <ul class="ex-list">
           <li>Japanese - native fluency</li>
@@ -352,19 +385,10 @@
           <li>Translation and interpretation experience</li>
         </ul>
       </div>
-      <div class="ex-card">
-        <div class="ex-lbl">Working Style</div>
-        <ul class="ex-list">
-          <li>Cross-cultural communication</li>
-          <li>Technical documentation</li>
-          <li>Agile and Scrum collaboration</li>
-        </ul>
-      </div>
     </div>
   </div>
 </section>
 
-<div class="shoreline-divider" aria-hidden="true"></div>
 
 <!-- ═══ CONTACT ═══ -->
 <section class="contact-wrap" id="contact">
@@ -409,7 +433,7 @@
 </section>
 
 <footer>
-  <span class="f-logo">Mila<span>.</span>Kam</span>
+  <span class="f-logo">Mila's Portfolio</span>
   <span class="f-copy">Mila Kam</span>
   <div class="f-lnks">
     <a href="https://github.com/Milakam25" target="_blank" rel="noopener noreferrer">GitHub</a>

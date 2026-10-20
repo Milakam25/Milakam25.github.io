@@ -7,63 +7,9 @@ const obs = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 rv.forEach((el) => obs.observe(el));
 
-const profileInput = document.getElementById('profile-photo');
-const profilePreview = document.getElementById('profile-preview');
-const profileFeedback = document.getElementById('profile-feedback');
-const profileKey = 'mila-portfolio-profile-photo';
-
-if (profileInput && profilePreview && profileFeedback) {
-  try {
-    const savedPhoto = localStorage.getItem(profileKey);
-    if (savedPhoto) {
-      profilePreview.src = savedPhoto;
-      profileFeedback.textContent = 'Change photo';
-    }
-  } catch (_) {
-    // Local files can have storage disabled in some browsers.
-  }
-
-  profileInput.addEventListener('change', () => {
-    const file = profileInput.files && profileInput.files[0];
-    if (!file) return;
-    if (!file.type.startsWith('image/')) {
-      profileFeedback.textContent = 'Please choose an image';
-      return;
-    }
-
-    const photo = new Image();
-    const photoUrl = URL.createObjectURL(file);
-    photo.onload = () => {
-      const canvas = document.createElement('canvas');
-      canvas.width = 320;
-      canvas.height = 320;
-      const context = canvas.getContext('2d');
-      if (!context) {
-        URL.revokeObjectURL(photoUrl);
-        profileFeedback.textContent = 'Could not load photo';
-        return;
-      }
-      const size = Math.min(photo.naturalWidth, photo.naturalHeight);
-      context.drawImage(photo,
-        (photo.naturalWidth - size) / 2, (photo.naturalHeight - size) / 2,
-        size, size, 0, 0, 320, 320);
-      const result = canvas.toDataURL('image/jpeg', 0.82);
-      profilePreview.src = result;
-      profileFeedback.textContent = 'Change photo';
-      try { localStorage.setItem(profileKey, result); } catch (_) {}
-      URL.revokeObjectURL(photoUrl);
-    };
-    photo.onerror = () => {
-      URL.revokeObjectURL(photoUrl);
-      profileFeedback.textContent = 'Could not load photo';
-    };
-    photo.src = photoUrl;
-  });
-}
-
 if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  const wavePhotos = document.querySelectorAll('.hero-photo-bg, .about-img-bg, .pbg, .exp-bg');
-  const waveDividers = document.querySelectorAll('.shoreline-divider');
+  const wavePhotos = document.querySelectorAll('.hero-photo-bg, .about-img-bg, .place-photo, .pbg, .exp-bg');
+  const placeCrossfade = document.querySelector('.place-crossfade');
   let waveFrame = 0;
   const updateWave = () => {
     const height = window.innerHeight;
@@ -73,16 +19,12 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       const progress = (height - rect.top) / (height + rect.height);
       photo.style.setProperty('--wave-shift', `${Math.sin(progress * Math.PI * 2) * 24}px`);
     });
-    waveDividers.forEach((divider) => {
-      const rect = divider.getBoundingClientRect();
-      if (rect.bottom < 0 || rect.top > height) return;
-      const progress = (height - rect.top) / (height + rect.height);
-      const phase = progress * Math.PI * 2;
-      divider.style.setProperty('--wave-x', `${Math.sin(phase) * 18}px`);
-      divider.style.setProperty('--wave-x-reverse', `${Math.sin(phase) * -11}px`);
-      divider.style.setProperty('--wave-top', `${Math.cos(phase) * 7}px`);
-      divider.style.setProperty('--wave-bottom', `${Math.sin(phase) * 9}px`);
-    });
+    if (placeCrossfade) {
+      const rect = placeCrossfade.getBoundingClientRect();
+      const raw = (height * 0.72 - rect.top) / Math.max(1, rect.height * 0.82);
+      const fade = Math.min(1, Math.max(0, raw));
+      placeCrossfade.style.setProperty('--place-fade', fade.toFixed(3));
+    }
     waveFrame = 0;
   };
   const queueWave = () => {

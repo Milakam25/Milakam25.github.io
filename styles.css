@@ -391,6 +391,11 @@
     }
 
     .crystal-content { position: relative; z-index: 3; }
+    .veterinary-project { grid-column: 1 / -1; min-width: 0; }
+    .veterinary-project .crystal-card { height: auto; }
+    .veterinary-downloads { display: flex; flex-wrap: wrap; gap: 16px 32px; }
+    .veterinary-downloads a { overflow-wrap: anywhere; }
+    .veterinary-source { margin-top: 18px; color: #405a59; font-size: 13px; line-height: 1.6; }
     .crystal-emotion {
       font-family: 'Space Mono', monospace;
       font-size: 9px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
@@ -602,6 +607,61 @@
 
     /* ── EDUCATION ── */
     .edu-wrap { background: var(--dark2); padding: 88px 5vw; }
+    .edu-photo-strip {
+      display: grid;
+      grid-template-columns: 1.1fr .72fr .92fr;
+      align-items: end;
+      gap: clamp(18px, 3vw, 42px);
+      margin: -52px 0 42px auto;
+      max-width: min(1120px, 72vw);
+      min-height: 230px;
+    }
+    .edu-photo {
+      position: relative;
+      overflow: hidden;
+      margin: 0;
+      border: 8px solid rgba(255,253,253,.84);
+      background: rgba(255,255,255,.38);
+      box-shadow: 0 20px 48px rgba(23,43,43,.12);
+      animation: eduPhotoFloat 6.2s ease-in-out infinite;
+    }
+    .edu-photo img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      filter: saturate(.96) brightness(1.04);
+      transition: transform .45s ease, filter .45s ease;
+    }
+    .edu-photo:hover img {
+      transform: scale(1.06);
+      filter: saturate(1.12) brightness(1.05);
+    }
+    .edu-photo-wide {
+      height: 220px;
+      border-radius: 10px 30px 10px 30px;
+      transform: rotate(-1.5deg);
+    }
+    .edu-photo-small {
+      height: 168px;
+      border-radius: 34px;
+      transform: translateY(18px) rotate(.8deg);
+      animation-delay: .7s;
+    }
+    .edu-photo-tilt {
+      height: 210px;
+      border-radius: 30px 10px 30px 10px;
+      transform: rotate(3deg);
+      animation-delay: 1.2s;
+    }
+    @keyframes eduPhotoFloat {
+      0%, 100% {
+        translate: 0 0;
+      }
+      50% {
+        translate: 0 -10px;
+      }
+    }
     .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
     .edu-card {
       background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07);
@@ -841,36 +901,594 @@
       .hero-profile { margin-top: 8px; }
     }
 
-    .shoreline-divider {
-      height: clamp(55px, 7vw, 90px);
-      position: relative;
-      overflow: hidden;
-      background: #e7f7f5;
+    /* Updated first and second page copy layout */
+    .hero {
+      min-height: 100svh;
     }
-    .shoreline-divider::before,
-    .shoreline-divider::after {
+    .hero-left {
+      justify-content: center;
+      padding-top: 84px;
+      padding-bottom: 56px;
+    }
+    .hero-h1 {
+      max-width: 760px;
+    }
+    .hero-about-copy {
+      max-width: 700px;
+      margin-bottom: 30px;
+    }
+    .hero-about-copy p {
+      margin: 0 0 12px;
+    }
+    .hero-about-copy p:last-child {
+      margin-bottom: 0;
+    }
+    .hero-btns {
+      margin-bottom: 22px;
+    }
+    .about-strip#why-tech .about-text-col {
+      padding-top: 88px;
+      padding-bottom: 88px;
+    }
+    .about-strip#why-tech .about-p {
+      max-width: 650px;
+    }
+
+    @media (max-width: 1100px) {
+      .hero {
+        min-height: auto;
+      }
+      .hero-left {
+        padding-top: 104px;
+      }
+      .hero-about-copy {
+        max-width: 760px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .hero-h1 {
+        font-size: clamp(40px, 13vw, 64px);
+      }
+      .hero-role {
+        margin-bottom: 22px;
+      }
+      .hero-about-copy {
+        font-size: 14px;
+        line-height: 1.72;
+      }
+      .hero-about-copy p {
+        margin-bottom: 10px;
+      }
+      .about-strip#why-tech .about-text-col {
+        padding-top: 72px;
+        padding-bottom: 72px;
+      }
+    }
+
+    .combined-about { scroll-margin-top: 60px; }
+    .combined-about-label {
+      margin-bottom: 16px;
+      color: var(--green);
+      font-size: 18px;
+      letter-spacing: 0;
+    }
+    .combined-about-lead {
+      max-width: 650px;
+      margin-bottom: 24px;
+      color: var(--ink);
+      font-size: 28px;
+      line-height: 1.22;
+    }
+    .combined-about-strengths {
+      max-width: 650px;
+      margin-top: 10px;
+      padding-top: 20px;
+      border-top: 1px solid #cce5dc;
+      color: var(--green);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    /* Hawaii to Japan scroll crossfade */
+    .place-crossfade {
+      --place-fade: 0;
+      min-height: 100%;
+      background: #10231f;
+    }
+    .place-photo {
+      position: absolute;
+      inset: -6%;
+      background-size: cover;
+      background-position: center;
+      transform: translate3d(0, var(--wave-shift, 0px), 0) scale(1.08);
+      will-change: opacity, transform;
+    }
+    .place-photo-hawaii {
+      background-image: url('assets/hawaii-photo.jpg');
+      opacity: calc(1 - var(--place-fade));
+    }
+    .place-photo-japan {
+      background-image: url('assets/japan-photo.jpg');
+      opacity: var(--place-fade);
+    }
+    .place-crossfade::after {
       content: '';
       position: absolute;
-      left: -10%;
-      width: 120%;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(to right, rgba(16,35,31,.1), #fffdfd 100%),
+        linear-gradient(to bottom, rgba(255,253,253,.18), transparent 28%, rgba(12,12,16,.12));
       pointer-events: none;
-      will-change: transform;
     }
-    .shoreline-divider::before {
-      top: -45%;
-      height: 85%;
-      background: #f8fbfa;
-      border-radius: 0 0 50% 50% / 0 0 75% 75%;
-      transform: translate3d(var(--wave-x, 0px), var(--wave-top, 0px), 0);
+    .album-board {
+      position: absolute;
+      z-index: 2;
+      inset: 8% 10%;
+      pointer-events: none;
     }
-    .shoreline-divider::after {
-      bottom: -55%;
-      height: 83%;
-      background: linear-gradient(90deg, #b8f2ea, #8bded4, #a8e5dc);
-      border-radius: 50% 50% 0 0 / 85% 85% 0 0;
-      transform: translate3d(var(--wave-x-reverse, 0px), var(--wave-bottom, 0px), 0);
+    .album-card {
+      position: absolute;
+      overflow: hidden;
+      border: 10px solid rgba(255,253,253,.84);
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 24px 60px rgba(23,43,43,.18);
+      animation: albumFloat 6s ease-in-out infinite;
     }
-    @media (prefers-reduced-motion: reduce) {
-      .shoreline-divider::before,
-      .shoreline-divider::after { transform: none; will-change: auto; }
+    .album-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(23,43,43,.42), transparent 52%);
+    }
+    .album-card span {
+      position: absolute;
+      left: 18px;
+      bottom: 16px;
+      z-index: 1;
+      color: #fff;
+      font-size: clamp(16px, 1.6vw, 26px);
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+    .album-card-main {
+      left: 0;
+      top: 3%;
+      width: min(72%, 440px);
+      height: 62%;
+      border-radius: 38px 38px 10px 10px;
+      background-image: url('assets/hawaii-photo.jpg');
+      opacity: calc(.95 - (var(--place-fade) * .28));
+    }
+    .album-card-secondary {
+      right: 0;
+      bottom: 4%;
+      width: min(64%, 390px);
+      height: 58%;
+      border-radius: 10px 34px 10px 34px;
+      background-image: url('assets/japan-photo.jpg');
+      opacity: calc(.62 + (var(--place-fade) * .38));
+      animation-delay: .7s;
+    }
+    @keyframes albumFloat {
+      0%, 100% {
+        transform: translateY(0) rotate(-.5deg);
+      }
+      50% {
+        transform: translateY(-12px) rotate(.7deg);
+      }
+    }
+    .place-progress {
+      position: absolute;
+      z-index: 2;
+      right: 34px;
+      bottom: 48px;
+      width: 90px;
+      height: 3px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(255,255,255,.5);
+    }
+    .place-progress span {
+      display: block;
+      width: calc(var(--place-fade) * 100%);
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #3a9f83, #f3a7c2);
+    }
+
+    @media (max-width: 960px) {
+      .place-crossfade {
+        min-height: 360px;
+      }
+      .place-crossfade::after {
+        background: linear-gradient(to bottom, transparent 45%, #fffdfd 100%);
+      }
+      .album-board {
+        inset: 10% 7%;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .album-board {
+        inset: 9% 20px 14%;
+      }
+      .album-card-main {
+        width: 78%;
+      }
+      .album-card-secondary {
+        width: 72%;
+        height: 54%;
+      }
+      .place-progress {
+        right: 20px;
+        bottom: 18px;
+      }
+    }
+
+    /* Professional hero cover and dedicated About page */
+    .hero-left {
+      justify-content: center;
+      padding-top: 100px;
+      padding-bottom: 80px;
+    }
+    .hero-name-animated {
+      max-width: 820px;
+      margin-bottom: 22px;
+      font-size: clamp(72px, 11vw, 150px);
+      line-height: .82;
+      letter-spacing: -0.055em;
+      text-transform: none;
+    }
+    .hero-name-animated span,
+    .hero-name-animated em {
+      display: block;
+      opacity: 0;
+      transform: translateY(44px) skewY(3deg);
+      animation: nameRise .95s cubic-bezier(.18,.86,.24,1) forwards;
+    }
+    .hero-name-animated em {
+      animation-delay: .18s;
+      color: var(--pink);
+    }
+    .hero-name-animated::after {
+      content: '';
+      display: block;
+      width: min(320px, 62vw);
+      height: 3px;
+      margin-top: 28px;
+      background: linear-gradient(90deg, var(--green), var(--pink), transparent);
+      transform: scaleX(0);
+      transform-origin: left;
+      animation: lineDraw .85s ease .72s forwards;
+    }
+    @keyframes nameRise {
+      to {
+        opacity: 1;
+        transform: translateY(0) skewY(0);
+      }
+    }
+    @keyframes lineDraw {
+      to {
+        transform: scaleX(1);
+      }
+    }
+    .hero-role {
+      max-width: 560px;
+    }
+    .hero-right {
+      display: grid;
+      place-items: center;
+      padding: 110px 6vw 70px 2vw;
+    }
+    .hero-portrait-card {
+      position: relative;
+      z-index: 4;
+      display: grid;
+      justify-items: center;
+      gap: 14px;
+      width: min(420px, 78%);
+      padding: 18px 18px 20px;
+      border: 1px solid rgba(255,255,255,.5);
+      border-radius: 46% 46% 18px 18px;
+      background: rgba(255,253,253,.48);
+      box-shadow: 0 28px 70px rgba(23,43,43,.16);
+      backdrop-filter: blur(16px);
+      animation: portraitFloat 5.6s ease-in-out infinite;
+    }
+    .hero-portrait-card .hero-portrait {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+      aspect-ratio: 3 / 4;
+      border: 0;
+      border-radius: 44% 44% 14px 14px;
+      box-shadow: none;
+    }
+    .hero-portrait-card .profile-feedback {
+      border-radius: 999px;
+      background: rgba(255,253,253,.82);
+      padding: 8px 14px;
+      color: var(--ink);
+      font-size: 13px;
+      box-shadow: 0 8px 24px rgba(23,43,43,.1);
+    }
+    @keyframes portraitFloat {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-14px);
+      }
+    }
+    .about-page {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(82px, 10vw, 132px) 7vw;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(245,201,217,.42), transparent 28%),
+        radial-gradient(circle at 85% 25%, rgba(184,242,234,.58), transparent 28%),
+        #fffdfd;
+    }
+    .about-page::before {
+      content: 'ABOUT';
+      position: absolute;
+      right: -2vw;
+      top: 18px;
+      color: rgba(50,132,108,.08);
+      font-size: clamp(72px, 16vw, 210px);
+      font-weight: 700;
+      line-height: .8;
+      pointer-events: none;
+    }
+    .about-page-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(240px, .42fr) minmax(320px, 1fr);
+      gap: clamp(28px, 5vw, 58px);
+      align-items: start;
+    }
+    .about-page-heading {
+      position: sticky;
+      top: 96px;
+    }
+    .about-page-kicker {
+      color: var(--green);
+      font-size: 13px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .about-page-lead {
+      margin-top: 18px;
+      color: var(--ink);
+      font-size: clamp(30px, 4.8vw, 64px);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -.035em;
+    }
+    .about-story {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 220px;
+      gap: clamp(24px, 4vw, 44px);
+      align-items: start;
+      border-left: 3px solid #80bea7;
+      padding-left: clamp(22px, 3vw, 34px);
+    }
+    .about-story-main {
+      color: #385452;
+      font-size: clamp(16px, 1.25vw, 19px);
+      line-height: 1.86;
+    }
+    .about-story-main p {
+      margin: 0 0 18px;
+    }
+    .about-story-main p:last-child {
+      margin-bottom: 0;
+    }
+    .about-focus-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: sticky;
+      top: 110px;
+    }
+    .about-focus-list span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      border: 1px solid #cce5dc;
+      border-radius: 999px;
+      background: rgba(255,255,255,.72);
+      box-shadow: 0 10px 28px rgba(23,43,43,.06);
+      color: var(--ink);
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: 700;
+      animation: focusFloat 5s ease-in-out infinite;
+    }
+    .about-focus-list span:nth-child(2n) {
+      animation-delay: .7s;
+      background: rgba(240,250,245,.88);
+    }
+    .about-focus-list span:nth-child(3n) {
+      animation-delay: 1.3s;
+      background: rgba(252,234,240,.76);
+    }
+    @keyframes focusFloat {
+      0%, 100% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(8px);
+      }
+    }
+
+    @media (max-width: 960px) {
+      .hero {
+        min-height: 100svh;
+      }
+      .hero-right {
+        display: grid;
+        position: relative;
+        inset: auto;
+        opacity: 1;
+        padding: 28px 6vw 72px;
+      }
+      .hero-photo-bg {
+        opacity: .22;
+      }
+      .hero-portrait-card {
+        width: min(360px, 88vw);
+      }
+      .about-page-inner {
+        grid-template-columns: 1fr;
+      }
+      .about-page-heading {
+        position: relative;
+        top: auto;
+      }
+      .about-story {
+        grid-template-columns: 1fr;
+      }
+      .about-focus-list {
+        position: relative;
+        top: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .edu-photo-strip {
+        max-width: 100%;
+        margin-top: 20px;
+        grid-template-columns: 1fr 1fr 1fr;
+        min-height: 170px;
+      }
+      .edu-photo-wide,
+      .edu-photo-small,
+      .edu-photo-tilt {
+        height: 170px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-name-animated {
+        font-size: clamp(58px, 20vw, 96px);
+      }
+      .hero-left {
+        padding-bottom: 32px;
+      }
+      .edu-photo-strip {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .edu-photo-wide,
+      .edu-photo-small,
+      .edu-photo-tilt {
+        height: 210px;
+        transform: none;
+      }
+    }
+
+    /* More page motion, kept gentle */
+    .about-page,
+    .photo-section,
+    .proj-wrap,
+    .exp-section,
+    .edu-wrap,
+    .contact-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+    .about-page::after,
+    .photo-section::after,
+    .proj-wrap::after,
+    .exp-section::after,
+    .edu-wrap::after,
+    .contact-wrap::after {
+      content: '';
+      position: absolute;
+      z-index: 0;
+      left: -12%;
+      right: -12%;
+      width: auto;
+      height: clamp(42px, 6vw, 86px);
+      border: 0;
+      border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+      background:
+        radial-gradient(70% 120% at 50% 100%, rgba(184,242,234,.34), rgba(184,242,234,0) 68%),
+        linear-gradient(90deg, rgba(255,253,253,0), rgba(184,242,234,.28), rgba(255,253,253,0));
+      pointer-events: none;
+      animation: beachWave 9s ease-in-out infinite;
+    }
+    .about-page::after {
+      bottom: 0;
+    }
+    .photo-section::after {
+      bottom: 0;
+      background:
+        radial-gradient(70% 120% at 50% 100%, rgba(245,201,217,.22), rgba(245,201,217,0) 68%),
+        linear-gradient(90deg, rgba(255,253,253,0), rgba(184,242,234,.22), rgba(255,253,253,0));
+    }
+    .proj-wrap::after {
+      bottom: 0;
+      animation-delay: .8s;
+    }
+    .exp-section::after {
+      bottom: 0;
+      animation-delay: 1.4s;
+    }
+    .edu-wrap::after {
+      bottom: 0;
+      animation-delay: 2s;
+    }
+    .contact-wrap::after {
+      bottom: 0;
+      animation-delay: 2.6s;
+    }
+    @keyframes beachWave {
+      0%, 100% {
+        transform: translate3d(-2%, 8px, 0) scaleX(1);
+        opacity: .7;
+      }
+      50% {
+        transform: translate3d(2%, -4px, 0) scaleX(1.04);
+        opacity: .95;
+      }
+    }
+    .rv.on {
+      animation: softPop .65s cubic-bezier(.19,.8,.28,1) both;
+    }
+    @keyframes softPop {
+      0% {
+        opacity: 0;
+        transform: translateY(24px) scale(.98);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+    .trait {
+      animation: tagFloat 4.8s ease-in-out infinite;
+    }
+    .trait:nth-child(2n) {
+      animation-delay: .8s;
+    }
+    .trait:nth-child(3n) {
+      animation-delay: 1.4s;
+    }
+    @keyframes tagFloat {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
     }
