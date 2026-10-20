@@ -7,6 +7,21 @@ const obs = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 rv.forEach((el) => obs.observe(el));
 
+const contactForm = document.getElementById('contact-form');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const data = new FormData(contactForm);
+    const name = String(data.get('name') || '').trim();
+    const email = String(data.get('email') || '').trim();
+    const message = String(data.get('message') || '').trim();
+    const subject = encodeURIComponent(`Portfolio inquiry from ${name}`);
+    const body = encodeURIComponent(`${message}\n\nFrom: ${name}\nEmail: ${email}`);
+    window.location.href = `mailto:mila425250@gmail.com?subject=${subject}&body=${body}`;
+  });
+}
+
 if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const wavePhotos = document.querySelectorAll('.hero-photo-bg, .about-img-bg, .place-photo, .pbg, .exp-bg');
   const placeCrossfade = document.querySelector('.place-crossfade');

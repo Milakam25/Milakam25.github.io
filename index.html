@@ -3,13 +3,20 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Portfolio of Mila Kam, an MIS graduate focused on systems, cybersecurity, data, and full-stack development."/>
+  <meta name="theme-color" content="#0c0c10"/>
+  <meta property="og:title" content="Mila's Portfolio"/>
+  <meta property="og:description" content="MIS graduate focused on systems, cybersecurity, data, and full-stack development."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://milakam25.github.io/"/>
   <title>Mila's Portfolio</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <link rel="icon" href="favicon.ico"/>
+  <link rel="stylesheet" href="assets/css/styles.css"/>
 </head>
 <body>
 
 <!-- NAV -->
-<nav>
+<nav aria-label="Primary navigation">
   <a href="#top" class="nav-logo">Mila's Portfolio</a>
   <ul class="nav-links">
     <li><a href="#top">Home</a></li>
@@ -20,7 +27,7 @@
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="assets/resume.pdf" download class="nav-btn">Resume</a>
+  <a href="assets/documents/resume.pdf" download class="nav-btn">Resume</a>
 </nav>
 
 <!-- ═══ HERO ═══ -->
@@ -94,7 +101,7 @@
 
 <!-- ═══ SKILLS ═══ -->
 <section class="photo-section" id="skills">
-  <div class="pbg" style="background-image:url('assets/site-photo-placeholder.jpg');"></div>
+  <div class="pbg" style="background-image:url('assets/images/honolulu-coast.jpg');"></div>
   <div class="pov"></div>
   <div class="pcnt">
     <div class="mlbl rv">Expertise</div>
@@ -365,7 +372,7 @@
 
 <!-- ═══ CERTS & EXTRAS ═══ -->
 <section class="photo-section short" id="extras">
-  <div class="pbg" style="background-image:url('assets/site-photo-placeholder.jpg');"></div>
+  <div class="pbg" style="background-image:url('assets/images/honolulu-coast.jpg');"></div>
   <div class="pov"></div>
   <div class="pcnt">
     <div class="mlbl rv">Achievements</div>
@@ -417,18 +424,19 @@
           <div class="c-ico">gh</div>
           <div><div class="c-lbl">GitHub</div><div class="c-val">github.com/Milakam25</div></div>
         </a>
-        <a href="assets/resume.pdf" download class="c-link">
+        <a href="assets/documents/resume.pdf" download class="c-link">
           <div class="c-ico">cv</div>
           <div><div class="c-lbl">Resume</div><div class="c-val">Download PDF</div></div>
         </a>
       </div>
     </div>
-    <div class="c-form rv d2">
-      <div class="fg"><label class="flbl">Name</label><input class="finp" type="text" placeholder="Your name"/></div>
-      <div class="fg"><label class="flbl">Email</label><input class="finp" type="email" placeholder="your@email.com"/></div>
-      <div class="fg"><label class="flbl">Message</label><textarea class="finp" placeholder="Tell me about the opportunity..."></textarea></div>
-      <button class="fsbmt">Send Message</button>
-    </div>
+    <form class="c-form rv d2" id="contact-form">
+      <div class="fg"><label class="flbl" for="contact-name">Name</label><input class="finp" id="contact-name" name="name" type="text" autocomplete="name" placeholder="Your name" required/></div>
+      <div class="fg"><label class="flbl" for="contact-email">Email</label><input class="finp" id="contact-email" name="email" type="email" autocomplete="email" placeholder="your@email.com" required/></div>
+      <div class="fg"><label class="flbl" for="contact-message">Message</label><textarea class="finp" id="contact-message" name="message" placeholder="Tell me about the opportunity..." required></textarea></div>
+      <button class="fsbmt" type="submit">Send Message</button>
+      <p class="form-note">Submitting opens your email app so you can review the message before sending.</p>
+    </form>
   </div>
 </section>
 
@@ -441,6 +449,6 @@
     <a href="mailto:mila425250@gmail.com">Email</a>
   </div>
 </footer>
-  <script src="script.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
