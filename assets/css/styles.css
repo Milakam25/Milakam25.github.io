@@ -730,7 +730,7 @@
       display: flex; gap: 10px; align-items: flex-start; line-height: 1.5;
     }
     .ex-list li::before {
-      content: '+'; font-family: 'Space Mono', monospace;
+      content: none; font-family: 'Space Mono', monospace;
       font-size: 11px; color: var(--pink); flex-shrink: 0;
     }
 
@@ -891,6 +891,10 @@
       border-color: var(--pink);
     }
     .ex-card:focus-visible { outline: 2px solid var(--pink); outline-offset: 4px; }
+    #extras .ex-card { background: rgba(255,253,253,.97); }
+    #extras .ex-card:is(:hover, :focus, :active) { background: #fbe1ec; }
+    #extras .ex-lbl { color: #245f4e; font-size: 14px; line-height: 1.5; }
+    #extras .ex-list li { color: #172b2b; font-size: 16px; line-height: 1.65; }
     .tag { background: #fce9f0; border-color: #edbfd0; color: #9d3f62; }
     .tag.n { background: #e8f5f1; border-color: #bdded2; color: #266b57; }
     .proj-wrap { background: #f7fcfa; }
