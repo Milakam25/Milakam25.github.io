@@ -1666,8 +1666,9 @@
     .story-step p { font-size: 15px; line-height: 1.5; max-width: 520px; }
     .story-note { display: inline-block; font-size: 12px; color: #536a6a; margin-top: 6px; }
     .story-card { --project-light: #ff6090; --project-glow: rgba(255,96,144,.25); --project-tint: #ffdae7; position: relative; isolation: isolate; padding: 36px 32px 24px; background: #fce9ef; border: 1px solid rgba(23,43,43,.1); border-radius: 8px; box-shadow: 0 0 70px 22px rgba(255,210,65,.3), 0 18px 90px 14px rgba(255,190,40,.22), inset 0 2px 0 rgba(255,255,255,.8); min-width: 0; transition: background-color .35s ease, box-shadow .35s ease, border-color .35s ease; }
-    .project-story[data-story-step="1"] .story-card { --project-light: #278bb3; --project-glow: rgba(39,139,179,.25); --project-tint: #c8edfa; background: #dff3f9; }
-    .project-story[data-story-step="2"] .story-card { --project-light: #32846c; --project-glow: rgba(50,132,108,.25); --project-tint: #cfeeda; background: #e3f4e7; }
+    .project-story[data-project="mochi"] .story-card { --project-light: #278bb3; --project-glow: rgba(39,139,179,.25); --project-tint: #c8edfa; background: #dff3f9; }
+    .project-story[data-project="kizashi"] .story-card { --project-light: #7661ab; --project-glow: rgba(118,97,171,.25); --project-tint: #e0d6f5; background: #eee9fa; }
+    .project-story[data-project="data"] .story-card { --project-light: #32846c; --project-glow: rgba(50,132,108,.25); --project-tint: #cfeeda; background: #e3f4e7; }
     .project-story .story-card:is(:hover, :focus-within, .is-lit) { background: var(--project-tint); border-color: var(--project-light); box-shadow: 0 0 80px 26px rgba(255,210,65,.38), 0 20px 100px 18px rgba(255,190,40,.26), inset 0 0 22px rgba(255,255,255,.8); }
     .story-card:focus-visible { outline: 2px solid var(--project-light); outline-offset: 5px; }
     .story-details, .story-dots { position: relative; z-index: 1; }
@@ -1708,7 +1709,7 @@
     .story-dots button:focus-visible { outline: 2px solid var(--story-accent); outline-offset: -4px; }
     .story-track-progress { height: 2px; background: #e5e2ef; margin-top: 24px; }
     .story-track-progress span { display: block; height: 100%; background: var(--story-accent); transform: scaleX(0); transform-origin: left; }
-    .story-enhanced { height: 400svh; }
+    .story-enhanced { height: var(--story-track-height, 500svh); }
     .story-enhanced .story-stage { position: sticky; top: 0; height: 100svh; display: flex; flex-direction: column; }
     .story-enhanced .story-layout { flex: 1; min-height: 0; }
     .story-enhanced .story-card { max-height: 100%; overflow-y: auto; }

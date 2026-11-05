@@ -1,12 +1,11 @@
-function getProjectStoryState(progress) {
+function getProjectStoryState(progress, count = 4) {
   const p = Math.max(0, Math.min(1, progress));
   const ease = (t) => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
   // Holds alternate with scroll-distance-based transitions, never a timer.
-  let step = 0;
-  if (p >= .83) step = 2;
-  else if (p >= .58) step = 1 + ease((p - .58) / .25);
-  else if (p >= .4) step = 1;
-  else if (p > .15) step = ease((p - .15) / .25);
+  const last = Math.max(0, count - 1);
+  const scaled = Math.max(0, Math.min(last, (p - .1) / .8 * last));
+  const index = Math.floor(scaled);
+  const step = Math.min(last, index + ease(Math.min(1, (scaled - index) / .7)));
   return { progress: p, step, active: Math.round(step) };
 }
 
@@ -24,6 +23,7 @@ function getProjectStoryState(progress) {
   }, { passive: true });
   const steps = [...track.querySelectorAll('.story-step')];
   const panels = [...track.querySelectorAll('.story-panel')];
+  const count = steps.length;
   const dots = [...track.querySelectorAll('[data-go]')];
   const progressbar = track.querySelector('.story-track-progress');
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -38,7 +38,7 @@ function getProjectStoryState(progress) {
   };
   const update = () => {
     frame = 0;
-    const state = getProjectStoryState((window.scrollY - top) / distance);
+    const state = getProjectStoryState((window.scrollY - top) / distance, count);
     if (reduced.matches) state.step = state.active;
     track.dataset.storyStep = String(state.active);
     steps.forEach((element, i) => {
@@ -50,24 +50,27 @@ function getProjectStoryState(progress) {
     progressbar.setAttribute('aria-valuenow', String(Math.round(state.progress * 100)));
     if (active !== state.active) {
       active = state.active;
+      track.dataset.project = panels[active].dataset.project;
       panels.forEach((panel, i) => { panel.hidden = i !== active; });
       dots.forEach((dot, i) => {
         if (i === active) dot.setAttribute('aria-current', 'step');
         else dot.removeAttribute('aria-current');
       });
-      track.querySelector('.story-count').textContent = `0${active + 1} / 03`;
+      track.querySelector('.story-count').textContent = `${String(active + 1).padStart(2, '0')} / ${String(count).padStart(2, '0')}`;
     }
   };
   const queue = () => { if (!frame) frame = requestAnimationFrame(update); };
   const configure = () => {
     track.classList.add('story-enhanced');
+    track.style.setProperty('--story-track-height', `${(count + 1) * 100}svh`);
     active = -1;
     measure();
     queue();
   };
   dots.forEach((dot, i) => dot.addEventListener('click', () => {
     measure();
-    window.scrollTo({ top: top + distance * [.08, .49, .92][i], behavior: reduced.matches ? 'auto' : 'smooth' });
+    const stop = i === 0 ? .05 : i === count - 1 ? .95 : .1 + .8 * i / (count - 1);
+    window.scrollTo({ top: top + distance * stop, behavior: reduced.matches ? 'auto' : 'smooth' });
   }));
   window.addEventListener('scroll', queue, { passive: true });
   window.addEventListener('resize', () => { measure(); queue(); }, { passive: true });
