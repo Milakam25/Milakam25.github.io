@@ -26,7 +26,7 @@ try {
   await page.goto(`http://127.0.0.1:${server.address().port}/`, { waitUntil: 'load' });
   await page.waitForFunction(() => document.querySelector('.story-enhanced'));
   assert.deepEqual(await page.locator('.story-step h3').allTextContents(), ['Mochi', 'Kizashi', 'Malu', 'Veterinary Clinical Data Analysis']);
-  assert.equal(await page.locator('[data-project="kizashi"] a').getAttribute('href'), 'https://kizashi-flax.vercel.app/prepare');
+  assert.equal(await page.locator('[data-project="kizashi"] a').getAttribute('href'), 'https://kizashi-flax.vercel.app/');
   assert.equal(await page.locator('.story-sparkles i').count(), 6);
   const stops = [.05, .1 + .8 / 3, .1 + .8 * 2 / 3, .95];
   const visit = async (i) => {
